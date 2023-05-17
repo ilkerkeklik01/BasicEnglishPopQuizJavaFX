@@ -1,6 +1,9 @@
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -25,6 +28,12 @@ public class Page3 extends EachPage implements Gradeable{
         gridPane.setVgap(10);
         gridPane.setPadding(new Insets(10));
 
+        try {
+            Image image = new Image("backgrounds/background2.jpg");
+            gridPane.setBackground(new Background(new BackgroundImage(image,null,null,null,null)));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         VBox questionBox ;
         String[] o1 = {"Which is","Who's","When's","Where's"};

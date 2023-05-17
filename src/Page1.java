@@ -3,9 +3,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
@@ -70,6 +69,15 @@ public class Page1 extends EachPage implements Gradeable{
     private static Pane getPage() {
         fillTheMap();
         VBox root = new VBox(10);
+
+        try {
+            Image image = new Image("backgrounds/background2.jpg");
+            root.setBackground(new Background(new BackgroundImage(image,null,null,null,null)));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
         root.setPadding(new Insets(10));
         Label label = new Label("Fill in the blanks by translating the following Turkish sentences into English.");
         label.setFont(Font.font("Arial", FontWeight.BOLD, 24));

@@ -3,10 +3,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
@@ -31,7 +29,12 @@ public class Page2 extends EachPage implements Gradeable{
 
     private static Pane getPage() {
         BorderPane root = new BorderPane();
-
+        try {
+            Image image = new Image("backgrounds/background2.jpg");
+            root.setBackground(new Background(new BackgroundImage(image,null,null,null,null)));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         Label label = new Label();
         String str = "Opera refers to a dramatic art form, originating in Europe, in which the emotional content is \n" +
                 "conveyed to the audience as much through music, both vocal and instrumental, as it is through the \n" +

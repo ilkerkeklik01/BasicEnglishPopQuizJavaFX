@@ -10,6 +10,7 @@ public abstract class EachPage extends Scene {
 
     public EachPage(Parent root,Stage stage) {
         super(root,1200,900);
+
         primaryStage = stage;
 
     }
